@@ -40,23 +40,25 @@ namespace HoloLab.MixedReality.Toolkit.NrealLight.Input
             {
                 NRInput.LaserVisualActive = false;
                 NRInput.ReticleVisualActive = false;
+                var inputSystem = Service as IMixedRealityInputSystem;
                 var handedness = NRInput.DomainHand == ControllerHandEnum.Left ? Handedness.Left : Handedness.Right;
                 var pointers = RequestPointers(SupportedControllerType.ArticulatedHand, handedness);
-                var inputSource = InputSystem?.RequestNewGenericInputSource($"Nreal Light Controller", pointers, InputSourceType.Controller);
+                var inputSource = inputSystem?.RequestNewGenericInputSource($"Nreal Light Controller", pointers, InputSourceType.Controller);
                 controller = new NrealLightController(Microsoft.MixedReality.Toolkit.TrackingState.NotTracked, handedness, inputSource);
-                controller.SetupConfiguration(typeof(NrealLightController), InputSourceType.Controller);
+                controller.SetupConfiguration(typeof(NrealLightController));
                 for (int i = 0; i < controller.InputSource?.Pointers?.Length; i++)
                 {
                     controller.InputSource.Pointers[i].Controller = controller;
                 }
-                InputSystem.RaiseSourceDetected(controller.InputSource, controller);
+                inputSystem.RaiseSourceDetected(controller.InputSource, controller);
             }
             controller.UpdateController();
 
             // Change RaycastMode
             if (NRInput.GetButtonUp(ControllerButton.HOME))
             {
-                InputSystem.RaiseSourceLost(controller.InputSource, controller);
+                var inputSystem = Service as IMixedRealityInputSystem;
+                inputSystem.RaiseSourceLost(controller.InputSource, controller);
                 controller = null;
                 NRInput.RaycastMode = NRInput.RaycastMode == RaycastModeEnum.Laser ? RaycastModeEnum.Gaze : RaycastModeEnum.Laser;
             }
