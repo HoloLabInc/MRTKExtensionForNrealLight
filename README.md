@@ -2,7 +2,7 @@
 Mixed Reality Toolkit (MRTK) extension for Nreal Light
 
 ## Demo Video
-[![Demo video]()]()
+[![Demo video](http://img.youtube.com/vi/sj-0DyurmLQ/0.jpg)](https://youtu.be/sj-0DyurmLQ)
 
 # Supported versions
 - Unity 2018.4.x
@@ -12,6 +12,7 @@ Mixed Reality Toolkit (MRTK) extension for Nreal Light
 # Getting Started
 ## 1. Import NRSDKForUnity
 Download NRSDKForUnity 1.1.3 from Nreal developer center
+(https://developer.nreal.ai/download)
 
 ## 2. Import MRTK v2
 Download and import MRTK v2 unitypackages.  

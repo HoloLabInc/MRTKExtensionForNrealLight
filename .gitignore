@@ -73,6 +73,7 @@ crashlytics-build.properties
 /Assets/Plugins.meta
 /Assets/Resources
 /Assets/Resources.meta
+default.txt
 
 # MRTK symbolic link
 /Assets/MixedRealityToolkit
