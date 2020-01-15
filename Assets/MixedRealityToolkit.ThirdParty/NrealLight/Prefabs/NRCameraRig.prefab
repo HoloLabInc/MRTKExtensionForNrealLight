@@ -186,8 +186,8 @@ Camera:
   m_GameObject: {fileID: 8968059050269842986}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -199,7 +199,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 25
   orthographic: 0
@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 9071585114861281040}
   - component: {fileID: 9072298326358193512}
   - component: {fileID: 9072392470246229820}
+  - component: {fileID: 7341049504853232346}
   m_Layer: 0
   m_Name: NRCameraRig
   m_TagString: Untagged
@@ -363,7 +364,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857434b74457b704ba6f53c82a2d9bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quitLongPressTime: 3
+--- !u!114 &7341049504853232346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8968647962867970050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ebd2de50e48bb47bf97386b2eb19a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DefaultVirtualDisplayer: {fileID: 1406232319260624, guid: e0f440c4bb94be641af5dc113d3248f5,
+    type: 3}
 --- !u!1 &8968850977897872044
 GameObject:
   m_ObjectHideFlags: 0
