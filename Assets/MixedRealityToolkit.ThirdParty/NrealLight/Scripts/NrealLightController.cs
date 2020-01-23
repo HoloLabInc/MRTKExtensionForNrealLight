@@ -20,7 +20,7 @@ namespace HoloLab.MixedReality.Toolkit.NrealLight.Input
 
         public override MixedRealityInteractionMapping[] DefaultInteractions => new[]
        {
-            new MixedRealityInteractionMapping(0, "Spatial Pointer", AxisType.SixDof, DeviceInputType.SpatialPointer, MixedRealityInputAction.None),
+           new MixedRealityInteractionMapping(0, "Spatial Pointer", AxisType.SixDof, DeviceInputType.SpatialPointer, MixedRealityInputAction.None),
             new MixedRealityInteractionMapping(1, "Spatial Grip", AxisType.SixDof, DeviceInputType.SpatialGrip, MixedRealityInputAction.None),
             new MixedRealityInteractionMapping(2, "Select", AxisType.Digital, DeviceInputType.Select, MixedRealityInputAction.None),
             new MixedRealityInteractionMapping(3, "Grab", AxisType.SingleAxis, DeviceInputType.TriggerPress, MixedRealityInputAction.None),
@@ -58,7 +58,7 @@ namespace HoloLab.MixedReality.Toolkit.NrealLight.Input
             // hand interaction
             if (Interactions == null)
             {
-                Debug.LogError($"No interaction configuration for Oculus Quest Hand {ControllerHandedness} Source");
+                Debug.LogError($"No interaction configuration for Nreal Light Controller Source");
                 Enabled = false;
             }
             for (int i = 0; i < Interactions?.Length; i++)
@@ -78,6 +78,7 @@ namespace HoloLab.MixedReality.Toolkit.NrealLight.Input
                     case DeviceInputType.Select:
                     case DeviceInputType.TriggerPress:
                         Interactions[i].BoolData = NRInput.GetButton(ControllerButton.TRIGGER);
+
                         if (Interactions[i].Changed)
                         {
                             if (Interactions[i].BoolData)
